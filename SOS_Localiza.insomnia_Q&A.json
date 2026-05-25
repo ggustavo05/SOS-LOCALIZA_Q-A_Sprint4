@@ -1,0 +1,387 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: SOS Localiza API
+meta:
+  id: wrk_310608dd6baa49ce8fa5d9fc16ae609c
+  created: 1779665788563
+  modified: 1779665788563
+  description: ""
+collection:
+  - name: 01 - Público
+    meta:
+      id: fld_0260cc7fd35a446eb3f065ba8c6aefe5
+      created: 1779665788567
+      modified: 1779665788567
+      sortKey: -100
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/actuator/health"
+        name: Health
+        meta:
+          id: req_c39fb6429bf244a1af10f1dc839731ec
+          created: 1779665788570
+          modified: 1779668350835
+          isPrivate: false
+          description: ""
+          sortKey: -100
+        method: GET
+        headers:
+          - name: Accept
+            value: application/json
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/actuator/info"
+        name: Info
+        meta:
+          id: req_373f54ec286e4058b21f6df7b3559f7e
+          created: 1779665788571
+          modified: 1779665788571
+          isPrivate: false
+          description: ""
+          sortKey: -90
+        method: GET
+        headers:
+          - name: Accept
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/mobile/areas-risco"
+        name: Áreas de risco
+        meta:
+          id: req_bbcbb4ceb8fc47f999d7d4c84496888d
+          created: 1779665788573
+          modified: 1779665788573
+          isPrivate: false
+          description: ""
+          sortKey: -80
+        method: GET
+        headers:
+          - name: Accept
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/mobile/cadastro"
+        name: Cadastro mobile
+        meta:
+          id: req_aacabbfd07c6469a9aff5318d8f87a44
+          created: 1779665788575
+          modified: 1779665788575
+          isPrivate: false
+          description: ""
+          sortKey: -70
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "nomeCompleto": "João Silva",
+              "cpf": "12345678909",
+              "senha": "senha123",
+              "telefone": "11999998888",
+              "cep": "01310100"
+            }
+        headers:
+          - name: Accept
+            value: application/json
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: 02 - Mobile
+    meta:
+      id: fld_a66e71f0d6af406fa8df7465de874fe1
+      created: 1779665788576
+      modified: 1779665788576
+      sortKey: -90
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/api/mobile/me"
+        name: Meu perfil
+        meta:
+          id: req_d10134d2bb314bcd83ce40897050e4b1
+          created: 1779665788578
+          modified: 1779668440883
+          isPrivate: false
+          description: ""
+          sortKey: -100
+        method: GET
+        headers:
+          - name: Accept
+            value: application/json
+        authentication:
+          type: basic
+          username: "{{ _.user_citizen }}"
+          password: "{{ _.pass_password }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/mobile/reverse-geocode?lat=-23.55052&lon=-46.63331"
+        name: Reverse geocode
+        meta:
+          id: req_4de6e70a349142358dae5998b0e1f3c0
+          created: 1779665788579
+          modified: 1779665788579
+          isPrivate: false
+          description: ""
+          sortKey: -90
+        method: GET
+        headers:
+          - name: Accept
+            value: application/json
+        authentication:
+          type: basic
+          username: "{{ _.user_citizen }}"
+          password: "{{ _.pass_password }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: 03 - Eventos
+    meta:
+      id: fld_88b6c46338464d4598baf276648d390f
+      created: 1779665788580
+      modified: 1779665788580
+      sortKey: -80
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/api/eventos/ativos"
+        name: Ativos
+        meta:
+          id: req_d268384879ea46fea0c151e40cdbf2d3
+          created: 1779665788582
+          modified: 1779668384561
+          isPrivate: false
+          description: ""
+          sortKey: -100
+        method: GET
+        headers:
+          - name: Accept
+            value: application/json
+        authentication:
+          type: basic
+          username: "{{ _.user_citizen }}"
+          password: "{{ _.pass_password }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/eventos/getAll?page=0&size=10&direction=ASC"
+        name: Listar (paginado)
+        meta:
+          id: req_27457f7492fc4217911b1ac69c871062
+          created: 1779665788583
+          modified: 1779665788583
+          isPrivate: false
+          description: ""
+          sortKey: -99
+        method: GET
+        headers:
+          - name: Accept
+            value: application/json
+        authentication:
+          type: basic
+          username: "{{ _.user_citizen }}"
+          password: "{{ _.pass_password }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/eventos/getById/{{ _.id_evento }}"
+        name: Por ID
+        meta:
+          id: req_fb7ce90f05fb4ed2adae1de2e8eee5b5
+          created: 1779665788584
+          modified: 1779665788584
+          isPrivate: false
+          description: ""
+          sortKey: -98
+        method: GET
+        headers:
+          - name: Accept
+            value: application/json
+        authentication:
+          type: basic
+          username: "{{ _.user_citizen }}"
+          password: "{{ _.pass_password }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/eventos/buscarPorNome?nome=Enchente"
+        name: Buscar por nome
+        meta:
+          id: req_6fc616b7f7f348f1af23c9b895f173af
+          created: 1779665788587
+          modified: 1779665788587
+          isPrivate: false
+          description: ""
+          sortKey: -97
+        method: GET
+        headers:
+          - name: Accept
+            value: application/json
+        authentication:
+          type: basic
+          username: "{{ _.user_citizen }}"
+          password: "{{ _.pass_password }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: 04 - SMS
+    meta:
+      id: fld_c2efe8890dee4e278843f0d080181e11
+      created: 1779665788596
+      modified: 1779665788596
+      sortKey: -70
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/api/sms/getAll?page=0&size=10&direction=DESC"
+        name: Listar (ADMIN)
+        meta:
+          id: req_33cd898f34204dcc90610c1eeda6d1c5
+          created: 1779665788600
+          modified: 1779665788600
+          isPrivate: false
+          description: ""
+          sortKey: 0
+        method: GET
+        headers:
+          - name: Accept
+            value: application/json
+        authentication:
+          type: basic
+          username: "{{ _.user_admin }}"
+          password: "{{ _.pass_password }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/api/sms/marcarErro/{{ _.id_sms }}?erro=Falha%20simulada"
+        name: Marcar erro (ADMIN)
+        meta:
+          id: req_b8659e0c40544408981a2592ed63ee54
+          created: 1779665788624
+          modified: 1779665788624
+          isPrivate: false
+          description: ""
+          sortKey: 80
+        method: PATCH
+        headers:
+          - name: Accept
+            value: application/json
+        authentication:
+          type: basic
+          username: "{{ _.user_admin }}"
+          password: "{{ _.pass_password }}"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: 05 - Procedures (ADMIN)
+    meta:
+      id: fld_7c6b6b8afa4c4a8a98c81225613df68d
+      created: 1779665788625
+      modified: 1779665788625
+      sortKey: -60
+      description: ""
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_b8b4884fb23baeaec6a9bc3c97e8e2b4eacdb71e
+    created: 1779665789137
+    modified: 1779667512638
+  cookies:
+    - id: cf56e3a1-cf38-44b3-97ce-ae207f2c9d3a
+      key: ARRAffinity
+      value: b45a72993595e7c2cff6388991a94deb8c993acf95a5c3755ecae7cdb9813e82
+      domain: soslocaliza-api-prod-560242.azurewebsites.net
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: false
+    - id: a9e8c406-b61e-4562-a8d6-71ba54df918b
+      key: ARRAffinitySameSite
+      value: b45a72993595e7c2cff6388991a94deb8c993acf95a5c3755ecae7cdb9813e82
+      domain: soslocaliza-api-prod-560242.azurewebsites.net
+      path: /
+      secure: true
+      httpOnly: true
+      hostOnly: false
+environments:
+  name: Base
+  meta:
+    id: env_032a0f94052d46a98f9e7fbc5e826e33
+    created: 1779665788565
+    modified: 1779665788565
+    isPrivate: false
+  data:
+    base_url: https://soslocaliza-api-prod-560242.azurewebsites.net
+    base_url_prod: https://soslocaliza-api-prod-560242.azurewebsites.net
+    base_url_staging: https://soslocaliza-api-staging-560242.azurewebsites.net
+    user_citizen: citizen
+    user_admin: admin
+    pass_password: password
+    id_evento: "1"
+    id_sms: "1"
+    id_localizacao: "1"
+    id_usuario_proc: "1"
