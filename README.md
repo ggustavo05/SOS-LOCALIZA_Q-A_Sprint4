@@ -153,10 +153,13 @@ SOS_Localiza.insomnia.json
 
 ---
 
-# Integrantes
-
-- Gustavo Gonçalves
-
+## 👨‍💻 Equipe
+ 
+| Nome | RM |
+|------|----|
+| Amanda Galdino | 560066 |
+| Bruno Cantacini | 560242 |
+| Gustavo Gonçalves | 556823 |
 ---
 
 # Observações
@@ -164,3 +167,5 @@ SOS_Localiza.insomnia.json
 Os testes foram realizados utilizando autenticação Basic Auth e endpoints disponibilizados pela API do projeto SOS Localiza.
 
 A collection exportada em JSON permite reproduzir os testes diretamente no Insomnia.
+
+Conforme orientação atualizada da entrega, o vídeo de demonstração foi substituído pelo envio da collection exportada do Insomnia em formato JSON.
